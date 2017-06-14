@@ -1,10 +1,17 @@
 <h1>Tour of Heroes ({{mode}})</h1>
 <h3>Heroes:</h3>
+<h4> {{errorMessage}}</h4>
 <ul>
   <li *ngFor="let hero of heroes">{{hero.name}} {{hero.id}}{{hero.magic}}</li>
 </ul>
 
-<label>New hero name: <input #newHeroName /></label>
-<button (click)="addHero(newHeroName.value); newHeroName.value=''">Add Hero</button>
+<label>New hero name: 
+  <input [(ngModel)]="filterName">
+</label>
+<button (click)="getHeroes()">Add Hero</button>
 
-<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+
+
+
+<p class="error" >{{filterName}}</p>

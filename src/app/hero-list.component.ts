@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { OnInit ,Input} from '@angular/core';
 import {Hero} from './Hero';
 import {HEROES} from './mock-heroes';
 
@@ -17,8 +17,9 @@ export class HeroListComponent implements OnInit {
   errorMessage: string;
   heroes: Hero[];
   mode = 'Observable';
- 
- // constructor (private dataService: DataService) {}
+  @Input() filterName = '';
+  filter = "ice";
+  //constructor (private dataService: DataService) {}
   constructor(private hs:HeroService){}
   ngOnInit() { 
 
@@ -34,13 +35,16 @@ export class HeroListComponent implements OnInit {
     //                   heroes => this.heroes = heroes,
     //                   error =>  this.errorMessage = <any>error);
     //this.heroes = HEROES;
-    this.hs.getHeroes().subscribe(
-      ( heroes) => {this.heroes = heroes; 
-          for( let p of heroes){console.log("heroes length is : " + p.id);
-          }  
-      }
-    )
-}
- 
+    console.log("ts file: filter name is :  "  + this.filterName);
+    this.hs.getHeroes(this.filterName).subscribe(
+      heroes => {
+        this.heroes = heroes;
+        for(let p of heroes)
+        console.log("operator ; " + p.id );
+      },
+      err => this.errorMessage = err
+    );
+  } 
+  
   
 }

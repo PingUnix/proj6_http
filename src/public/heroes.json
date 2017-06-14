@@ -1,7 +1,7 @@
 
   [
         {
-          "id": "11", "name": "Mr. Nice","magic":"water"
+          "id": "11", "name": "Mr. Nice","magic":"fire"
         },
 
          {
@@ -9,15 +9,15 @@
         },
 
          {
-          "id": "13", "name": "Tornado","magic":"water"
+          "id": "13", "name": "Tornado","magic":"fire"
         },
 
          {
-          "id": "14", "name": "RubberMan","magic":"water"
+          "id": "14", "name": "RubberMan","magic":"ice"
         },
 
          {
-          "id": "15", "name": "Mr. Nice","magic":"water"
+          "id": "15", "name": "Mr. Nice","magic":"thunder"
         },
 
          {
