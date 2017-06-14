@@ -1,15 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import {DepartmentService} from './department.service';
+
+import {Department} from './department';
 
 @Component({
-  selector: 'app-department-list',
+  selector: 'department-list',
   templateUrl: './department-list.component.html',
-  styleUrls: ['./department-list.component.css']
+  styleUrls: ['./department-list.component.css'],
+  providers: [DepartmentService]
 })
 export class DepartmentListComponent implements OnInit {
+  departments: Department[];
 
-  constructor() { }
+  constructor(private dl:DepartmentService) { }
 
   ngOnInit() {
+    this.getDepartments();
   }
+  getDepartments(){
+    this.dl.getDepartments().subscribe(
+      dep => this.departments = dep
 
+
+    );
+
+  }
 }
+
