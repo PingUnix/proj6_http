@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { routingComponents} from './app-routing.module';
 import { DepartmentdetailComponent } from './departmentdetail.component';
+import { CustomerCounterComponent } from './customer-counter.component';
 
 
 //add customized approutingmodule 
@@ -19,7 +20,8 @@ import { DepartmentdetailComponent } from './departmentdetail.component';
    //HeroListComponent,
     //DepartmentListComponent,
     routingComponents,
-   DepartmentdetailComponent
+   DepartmentdetailComponent,
+   CustomerCounterComponent
   ],
 
   imports: [
