@@ -2,6 +2,6 @@
   department-list works!
 </p>
 
-<ul *ngFor="let d of departments" > 
-  <li> {{d.name}}</li>
+<ul class="items" > 
+  <li *ngFor="let d of departments" (click)="onSelect(d)"> <span>{{d.name}}  | {{d.id}}</span> </li>
   </ul>

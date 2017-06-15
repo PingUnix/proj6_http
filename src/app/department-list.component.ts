@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DepartmentService} from './department.service';
+import { Router } from '@angular/router';
 
 import {Department} from './department';
 
@@ -12,7 +13,8 @@ import {Department} from './department';
 export class DepartmentListComponent implements OnInit {
   departments: Department[];
 
-  constructor(private dl:DepartmentService) { }
+  constructor(private dl:DepartmentService, 
+              private router: Router) { }
 
   ngOnInit() {
     this.getDepartments();
@@ -21,9 +23,15 @@ export class DepartmentListComponent implements OnInit {
     this.dl.getDepartments().subscribe(
       dep => this.departments = dep
 
-
     );
+  }
 
+  onSelect(department){
+    this.router.navigate(['/departments', department.id]);
+
+    //use router service to route page, 
+    // args 1 , destination path, 
+    //arg2  , parameter, id 
   }
 }
 
