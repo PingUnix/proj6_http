@@ -3,5 +3,6 @@
 </p>
 
 <ul class="items" > 
-  <li *ngFor="let d of departments" (click)="onSelect(d)"> <span>{{d.name}}  | {{d.id}}</span> </li>
+  <li *ngFor="let d of departments"  (click)="onSelect(d)" [class.selected]="isSelected(d)"> 
+  <span>{{d.name}}  | {{d.id}}</span> </li>
   </ul>

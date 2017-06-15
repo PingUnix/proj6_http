@@ -12,6 +12,7 @@ const routes:Routes = [
     {path : 'departments', component:DepartmentListComponent},
     {path: 'heroes', component:HeroListComponent},
     {path: 'departments/:id', component:DepartmentdetailComponent}
+    {path: '', component:HomeComponent}
 
 ];
 

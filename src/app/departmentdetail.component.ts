@@ -1,5 +1,5 @@
-import { Component, OnInit ,Input} from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { Component, OnInit ,Input, } from '@angular/core';
+import { ActivatedRoute, Router,Params} from '@angular/router';
 
 @Component({
   //selector: 'app-departmentdetail', //do not need selector, just routing to page html
@@ -9,16 +9,43 @@ import { ActivatedRoute} from '@angular/router';
 export class DepartmentdetailComponent implements OnInit {
 
   public ids:number;
+  public random = 19;
   public name1:string = "new id";
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,
+              private rter: Router) { }
   //service of activeroute
 
   //fetch the parameter , id in the init function
-  ngOnInit() {
-    let id = this.route.snapshot.params['id'];
+  /*ngOnInit() {
+    let id = parseInt(this.route.snapshot.params['id']);
     //id match the id configured in the router, 
     //retrive the id by the snapshot 
     this.ids = id;
+  }
+*/
+  ngOnInit() {
+    this.route.params.subscribe( (parm:Params) => 
+    {
+      let id = parseInt(parm['id']);
+      console.log("logging " + id);
+      this.ids = id;
+    });
+  }
+  goPrev(){
+    let preId = this.ids - 1;
+    this.rter.navigate(['/departments',preId]);
+  }
+  goNext(){
+    let nextId = this.ids +  1;
+    this.rter.navigate(['./departments',nextId]);
+  }
+  goToDepartments(){
+    let selectedId = this.ids ? this.ids:null;
+    //current depart id 
+   // this.rter.navigate(['/departments',{id:selectedId, randoms:this.random}]);
+   this.rter.navigate(['/departments',{id:selectedId}]);
+   //this.rter.navigate(['/departments','']);
+    console.log("goToDepartments" + selectedId);
   }
 
 }

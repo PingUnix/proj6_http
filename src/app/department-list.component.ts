@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DepartmentService} from './department.service';
-import { Router } from '@angular/router';
+import { Router, Params,ActivatedRoute } from '@angular/router';
 
 import {Department} from './department';
 
@@ -12,12 +12,21 @@ import {Department} from './department';
 })
 export class DepartmentListComponent implements OnInit {
   departments: Department[];
-
+  
+  selectId:number;
+  
   constructor(private dl:DepartmentService, 
-              private router: Router) { }
+              private router: Router,
+              private art: ActivatedRoute) { }
 
   ngOnInit() {
     this.getDepartments();
+    this.art.params.subscribe( (parm:Params) => 
+    {
+      let id = parseInt(parm['id']);
+     
+      this.selectId = id;
+    });
   }
   getDepartments(){
     this.dl.getDepartments().subscribe(
@@ -29,9 +38,16 @@ export class DepartmentListComponent implements OnInit {
   onSelect(department){
     this.router.navigate(['/departments', department.id]);
 
+    //can be reusable in click and go back function
+
     //use router service to route page, 
     // args 1 , destination path, 
     //arg2  , parameter, id 
+  }
+
+  isSelected(department){ 
+    
+    return (parseInt(department.id) === this.selectId);
   }
 }
 

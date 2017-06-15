@@ -40,7 +40,7 @@ export class HeroListComponent implements OnInit {
       heroes => {
         this.heroes = heroes;
         for(let p of heroes)
-        console.log("operator ; " + p.id );
+          console.log("operator ; " + p.id );
       },
       err => this.errorMessage = err
     );

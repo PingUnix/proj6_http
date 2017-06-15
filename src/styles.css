@@ -5,3 +5,9 @@ nav a:hover{
     background-color:yellow;
 
 }
+
+.items li.selected {
+    background-color: blue;
+    color:white;
+    
+}

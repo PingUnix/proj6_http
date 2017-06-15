@@ -1,7 +1,7 @@
 <p>
 select the department with id  = {{ids}}
-
 </p>
-<input [(ngModel)]="name1">
-<p>{{name1}}</p>
-
+<a (click)="goPrev()"> Previous Record</a>
+<a (click)="goNext()"> Next Record</a>
+<br/>
+<button (click)="goToDepartments()">Go Back</button>

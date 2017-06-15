@@ -1,7 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<customer-counter [counter] ="initVal"></customer-counter>
+<p>counterValue = {{initVal}}</p>
 
+
+Input initial value :
+<input type="text" #initV /> 
+<button (click)="setValue(initV.value)">set value </button>
 <nav>
   <a routerLink="/departments" routerLinckActive="active"> Departmetns</a>
   <a routerLink="/heroes" routerLinckActive="active"> Heroes</a>

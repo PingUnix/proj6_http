@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'Routing Applications';
+  initVal:number = 0;
+  setValue(val){
+    this.initVal = val;
+  }
 }
