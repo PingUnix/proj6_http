@@ -12,11 +12,11 @@ import { HomeComponent} from './home.component';
 import { PageNotFoundComponent} from './page-not-found.component';
 import { Component} from '@angular/core';
 const routes:Routes = [
-   
+   {path: '', redirectTo:'/departments', pathMatch:'full'},
     {path : 'departments', component:DepartmentListComponent},
     {path: 'heroes', component:HeroListComponent},
     {path: 'departments/:id', component:DepartmentdetailComponent},
-     {path: '', redirectTo:'/departments', pathMatch:'prefix'},
+    
     {path: '**', component:PageNotFoundComponent}
 
 ];
