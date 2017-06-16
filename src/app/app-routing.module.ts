@@ -8,10 +8,9 @@ import { AppComponent } from './app.component';
 import { HeroListComponent } from './hero-list.component';
 import { DepartmentListComponent } from './department-list.component';
 import { DepartmentdetailComponent } from './departmentdetail.component';
-import {HomeComponent} from './home.component';
+import { HomeComponent} from './home.component';
 import { PageNotFoundComponent} from './page-not-found.component';
-
-
+import { Component} from '@angular/core';
 const routes:Routes = [
    
     {path : 'departments', component:DepartmentListComponent},

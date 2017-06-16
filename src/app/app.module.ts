@@ -27,6 +27,7 @@ import { PageComponent } from './page.component';
    CustomerCounterComponent,
    HomeComponent,
    PageNotFoundComponent,
+   PageComponent,
    PageComponent
   ],
 
