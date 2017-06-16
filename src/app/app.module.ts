@@ -12,6 +12,8 @@ import { routingComponents} from './app-routing.module';
 import { DepartmentdetailComponent } from './departmentdetail.component';
 import { CustomerCounterComponent } from './customer-counter.component';
 import { HomeComponent } from './home.component';
+import { PageNotFoundComponent } from './page-not-found.component';
+import { PageComponent } from './page.component';
 
 
 //add customized approutingmodule 
@@ -23,7 +25,9 @@ import { HomeComponent } from './home.component';
     routingComponents,
    DepartmentdetailComponent,
    CustomerCounterComponent,
-   HomeComponent
+   HomeComponent,
+   PageNotFoundComponent,
+   PageComponent
   ],
 
   imports: [
