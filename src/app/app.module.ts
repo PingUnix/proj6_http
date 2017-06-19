@@ -9,26 +9,20 @@ import { AppComponent } from './app.component';
 //import { DepartmentListComponent } from './department-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { routingComponents} from './app-routing.module';
-import { DepartmentdetailComponent } from './departmentdetail.component';
-import { CustomerCounterComponent } from './customer-counter.component';
-import { HomeComponent } from './home.component';
-import { PageNotFoundComponent } from './page-not-found.component';
-import { PageComponent } from './page.component';
+import { Node1Component } from './node1/node1.component';
 
 
-//add customized approutingmodule 
+//add customized approutingmodule to app.module, hiding the components used in routing 
+//separate the components with routing, providing a common place to configure the routing
+//modulized 
+
 @NgModule({
   declarations: [
     AppComponent,
    //HeroListComponent,
     //DepartmentListComponent,
     routingComponents,
-   DepartmentdetailComponent,
-   CustomerCounterComponent,
-   HomeComponent,
-   PageNotFoundComponent,
-   PageComponent,
-   PageComponent
+   Node1Component
   ],
 
   imports: [

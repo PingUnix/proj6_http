@@ -33,17 +33,20 @@ export class DepartmentdetailComponent implements OnInit {
   }
   goPrev(){
     let preId = this.ids - 1;
-    this.rter.navigate(['/departments',preId]);
+    this.rter.navigate(['/departmentsList',preId]);
   }
   goNext(){
     let nextId = this.ids +  1;
-    this.rter.navigate(['./departments',nextId]);
+    this.rter.navigate(['./departmentsList',nextId]);
   }
   goToDepartments(){
     let selectedId = this.ids ? this.ids:null;
+   this.rter.navigate( ['../', {id:selectedId}], {relativeTo:this.route});
     //current depart id 
    // this.rter.navigate(['/departments',{id:selectedId, randoms:this.random}]);
-   this.rter.navigate(['/departments',{id:selectedId}]);
+   //****this.rter.navigate(['/departmentsList',{id:selectedId}]);
+
+   //optional path
    //this.rter.navigate(['/departments','']);
     console.log("goToDepartments" + selectedId);
   }

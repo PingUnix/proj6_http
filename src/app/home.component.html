@@ -1,3 +1,19 @@
-<p>
-  home works!
+<button (click)="toggleLights()"> clicking </button>
+<div class="room"  (@lightOnOff.done)="animationDone($event)"
+  (@lightOnOff.start)="animationStarted($event)" [@lightOnOff]="roomState" >
+  <p style="color:red">Rotate </p>
+</div>
+<button (click)="toggleHeight()"> clicking </button>
+<div class="heightBox" [@lightOnOff]="roomState" [@heightTrigger]="heightState" >
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</div>
+<button (click)="ToggleDiv()">ToggleDiv
+</button>
+<p *ngIf="showDiv" [@flyInOut]>
+  FlyInOut
 </p>

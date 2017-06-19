@@ -36,8 +36,11 @@ export class DepartmentListComponent implements OnInit {
   }
 
   onSelect(department){
-    this.router.navigate(['/departments', department.id]);
-
+    //this.router.navigate(['/departmentsList', department.id]);
+    this.router.navigate([department.id], {relativeTo:this.art});
+   
+   
+    //curerent path router
     //can be reusable in click and go back function
 
     //use router service to route page, 
