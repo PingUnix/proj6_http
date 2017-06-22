@@ -10,6 +10,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { routingComponents} from './app-routing.module';
 import { Node1Component } from './node1/node1.component';
+import { BoldHoverDirective } from './bold-hover.directive';
+import { DirectiveExampleComponent } from './directive-example.component';
+import { HiddenDirective } from './hidden.directive';
+import { T1Component } from './t1.component';
 
 
 //add customized approutingmodule to app.module, hiding the components used in routing 
@@ -22,7 +26,11 @@ import { Node1Component } from './node1/node1.component';
    //HeroListComponent,
     //DepartmentListComponent,
     routingComponents,
-   Node1Component
+   Node1Component,
+   BoldHoverDirective,
+   DirectiveExampleComponent,
+   HiddenDirective,
+   T1Component
   ],
 
   imports: [
@@ -37,7 +45,8 @@ import { Node1Component } from './node1/node1.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
  // exports:[NgModule]
 })
 export class AppModule { }

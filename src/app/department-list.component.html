@@ -1,8 +1,35 @@
-<p>
-  department-list works!
+<p [id]="'id1'">
+  department-list is follwing 1 :
 </p>
+<p [style.display]="'none'">
+  department-list is follwing 2:
+</p>
+<p [style.display]="'block'">
+  department-list is follwing 2-1:
+</p>
+<p [style.hidden]="'false'">
+  department-list is follwing 3:
+</p>
+
+ <h2>ngFor</h2>
+<div *ngFor="let i of arr; let j =index;let las = last;let fi = first">
+  
+  <p *ngIf="!fi">{{i}} + {{j}} + {{fi}} </p>
+</div>
+
+        <div *ngFor="let person of people; let isOdd=odd; trackBy:trackByName">
+            <span [class.highlight]="isOdd">{{person.name.forename}} {{person.name.surname}}</span>
+        </div>
+        
+        <h3>For Loop</h3>
+        
+        <span *ngFor="let item of forLoopArray(15); let i=index; let last=last">
+            <span>{{i+1}}{{last ? '' : ','}}</span>
+        </span>
+
 
 <ul class="items" > 
   <li *ngFor="let d of departments"  (click)="onSelect(d)" [class.selected]="isSelected(d)"> 
   <span>{{d.name}}  | {{d.id}}</span> </li>
   </ul>
+

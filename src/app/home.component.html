@@ -1,3 +1,6 @@
+<h4 > this title h4</h4>
+<h2 > this title h4</h2>
+<p BoldHover> Turn bold when hovered</p>
 <button (click)="toggleLights()"> clicking </button>
 <div class="room"  (@lightOnOff.done)="animationDone($event)"
   (@lightOnOff.start)="animationStarted($event)" [@lightOnOff]="roomState" >

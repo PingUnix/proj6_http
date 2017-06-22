@@ -12,7 +12,10 @@ import {Department} from './department';
 })
 export class DepartmentListComponent implements OnInit {
   departments: Department[];
-  
+  parm1 = "center";
+  tab = 1;
+  arr=[1,2,3,4];
+  item = 1;
   selectId:number;
   
   constructor(private dl:DepartmentService, 
@@ -52,5 +55,20 @@ export class DepartmentListComponent implements OnInit {
     
     return (parseInt(department.id) === this.selectId);
   }
+
+   private people = [
+            {id: 1, name: {forename: 'John', surname: 'Doe'}},
+            {id: 2, name: {forename: 'John1', surname: 'Smith'}},
+            {id: 3, name: {forename: 'Peter', surname: 'Scott'}},
+            {id: 4, name: {forename: 'Sue', surname: 'Reece'}}
+        ];
+
+    private trackByName(indexs: number, person: any) {
+      console.log(person.name.surname);
+        return person.name.surname;
+    }
+    private forLoopArray(elements: number): Array<any> {
+        return new Array(elements);
+    }
 }
 

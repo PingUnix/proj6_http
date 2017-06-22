@@ -16,14 +16,34 @@ nav a:hover{
     margin:10px;
     height:200px;
     width:200px;
+   
     background-color:black;
     border: 1px solid black;
 
 }
 
+#id1 {
+    color:yellow;
+}
+.ex1{
+ color:purple;
+}
 .heightBox{
     margin:10px;
     width:200px;
     background-color:black;
     
 }
+.highlight{
+    color:red;
+}
+
+.tabs-selection {
+      background-color: #ddd;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: row;
+      padding-left: 16px;
+      padding-right: 16px;
+      width: 100%;
+    }

@@ -6,11 +6,14 @@ import {Component, OnInit,
       animate,
       keyframes,
       group   } from '@angular/core';
+import {BoldHoverDirective} from './bold-hover.directive';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  
+  styleUrls: ["./home.component.css", "./../test.css"],
+ 
   animations: [
     trigger('lightOnOff', [
       state('off',style({backgroundColor: 'yellow'})), 

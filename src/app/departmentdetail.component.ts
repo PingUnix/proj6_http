@@ -7,10 +7,13 @@ import { ActivatedRoute, Router,Params} from '@angular/router';
   styleUrls: ['./departmentdetail.component.css']
 })
 export class DepartmentdetailComponent implements OnInit {
+  @Input() st:string;
 
   public ids:number;
   public random = 19;
   public name1:string = "new id";
+
+  tsize = 'blue';
   constructor(private route:ActivatedRoute,
               private rter: Router) { }
   //service of activeroute
@@ -24,6 +27,7 @@ export class DepartmentdetailComponent implements OnInit {
   }
 */
   ngOnInit() {
+    console.log(this.st);
     this.route.params.subscribe( (parm:Params) => 
     {
       let id = parseInt(parm['id']);
